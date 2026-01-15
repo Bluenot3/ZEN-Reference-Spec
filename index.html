@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,17 +8,18 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
-        darkMode: 'class',
         theme: {
           extend: {
             colors: {
-              military: {
-                950: '#050505',
-                900: '#0a0a0a',
-                800: '#121212',
-                700: '#1a1a1a',
-                border: '#2a2a2a',
-                accent: '#00f0ff',
+              zen: {
+                50: '#f8fafc',  // Silver mist
+                100: '#f1f5f9', // Light silver
+                200: '#e2e8f0', // Slate silver
+                300: '#cbd5e1', // Border grey
+                800: '#1e293b', // Primary Text
+                900: '#0f172a', // Black text
+                accent: '#2dd4bf', // Mint/Teal 400
+                accentLight: '#99f6e4', // Mint/Teal 200
               }
             },
             fontFamily: {
@@ -26,7 +27,7 @@
               mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
             },
             backgroundImage: {
-              'grid-pattern': "linear-gradient(to right, #2a2a2a 1px, transparent 1px), linear-gradient(to bottom, #2a2a2a 1px, transparent 1px)",
+              'silver-gradient': "linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)",
             }
           },
         },
@@ -34,16 +35,15 @@
     </script>
     <style>
       body {
-        background-color: #050505;
-        color: #e2e8f0;
+        background-color: #f8fafc;
+        color: #1e293b;
       }
       .scrollbar-hide::-webkit-scrollbar {
           display: none;
       }
-      /* Custom selection color for that cyber/military feel */
       ::selection {
-        background: rgba(0, 240, 255, 0.2);
-        color: white;
+        background: rgba(45, 212, 191, 0.2);
+        color: #0f172a;
       }
       @media print {
         .no-print {
@@ -51,9 +51,6 @@
         }
         body {
           background-color: white !important;
-          color: black !important;
-        }
-        .print-black {
           color: black !important;
         }
       }
@@ -68,7 +65,7 @@
 }
 </script>
 </head>
-  <body class="bg-military-950 text-slate-300 antialiased">
+  <body class="bg-zen-50 text-zen-800 antialiased selection:bg-teal-100 selection:text-teal-900">
     <div id="root"></div>
   </body>
 </html>
